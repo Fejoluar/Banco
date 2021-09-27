@@ -7,7 +7,7 @@ public class Secretario extends Funcionario {
 	}
 	
 	public double getBonicacao() {
-		return super.getBonicacao() + 500;
+		return super.getBonicacao() + 1000;
 	}
 	
 }
