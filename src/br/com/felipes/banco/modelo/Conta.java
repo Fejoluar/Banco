@@ -18,6 +18,9 @@ public abstract class Conta {
 	}
 	
 	public void saca(double valor) {
+		if(valor < 0) {
+			throw new IllegalArgumentException("Nao pode sacar valor negativo");
+		}
 		if (this.saldo < valor) {
 			throw new IllegalArgumentException("Saldo Insuficiente");
 		} else {
