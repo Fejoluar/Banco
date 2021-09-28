@@ -24,6 +24,10 @@ public abstract class Conta {
 		
 	}
 	
+	public double calculaRendimento() {
+		return this.saldo*0.1;
+	}
+	
 	public void deposita(double valor) {
 		this.saldo  += valor;;	
 	}
