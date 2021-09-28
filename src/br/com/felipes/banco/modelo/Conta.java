@@ -39,11 +39,10 @@ public abstract class Conta {
 	}
 	
 	public void transferePara(Conta conta, double valor) {
-		if (valor <= this.saldo) {
-			this.saldo -= valor;
-			conta.deposita(valor);
-		}
+		saca(valor);
+		conta.deposita(valor);
 	}
+	
 	
 	public double calculaDeRendimento() {
 		return this.saldo*0.1;
