@@ -17,12 +17,11 @@ public abstract class Conta {
 		totalDeContas += 1;
 	}
 	
-	public double saca(double valor) {
-		if (valor <= this.saldo) {
-			this.saldo -= valor;
-			return valor;
+	public void saca(double valor) {
+		if (this.saldo < valor) {
+			throw new IllegalArgumentException("Saldo Insuficiente");
 		} else {
-			return valor;
+			this.saldo -= valor;			
 		}
 	}
 	
