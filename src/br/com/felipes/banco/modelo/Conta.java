@@ -31,7 +31,11 @@ public abstract class Conta {
 	}
 	
 	public void deposita(double valor) {
-		this.saldo  += valor;;	
+		if (valor < 0) {
+			throw new IllegalArgumentException("So pode depositar valor maior que 0");
+		} else {
+			this.saldo += valor;
+		}
 	}
 	
 	public void transferePara(Conta conta, double valor) {
