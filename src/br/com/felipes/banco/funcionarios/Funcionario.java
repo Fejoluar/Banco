@@ -1,6 +1,6 @@
 package br.com.felipes.banco.funcionarios;
 
-public abstract class Funcionario  {
+public abstract class Funcionario implements Departamento {
 	
 	private String nome;
 	private String cpf;
@@ -11,10 +11,10 @@ public abstract class Funcionario  {
 		this.cpf = cpf;
 	}
 	
-	public String getNome() {
+	public String getNomeFuncionario() {
 		return nome;
 	}
-	public void setNome(String nome) {
+	public void setNomeFuncionario(String nome) {
 		this.nome = nome;
 	}
 	

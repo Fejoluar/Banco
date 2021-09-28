@@ -11,4 +11,15 @@ public class Engenheiro extends Funcionario {
 		return super.getSalario()*0.3;
 	}
 
+	@Override
+	public String setNomeDepartamento(String nome) {
+		return nome;
+	}
+
+	@Override
+	public String getNomeDepartamento() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

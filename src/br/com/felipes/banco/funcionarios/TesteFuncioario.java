@@ -4,17 +4,10 @@ public class TesteFuncioario {
 
 	public static void main(String[] args) {
 		
-		Gerente gerente = new Gerente("Felipe","043534");
-		 
-		gerente.setNome("felipe");
-		 
-		gerente.setSenha("marista2193");
+		Engenheiro engenheiro = new Engenheiro("fe","34534r");
 		
-		boolean acesso = gerente.autentica("marista2193");
-		 
-		System.out.println(acesso);
+		System.out.println(engenheiro.setNomeDepartamento("Engenharia"));
 		
-
 	}
 
 }

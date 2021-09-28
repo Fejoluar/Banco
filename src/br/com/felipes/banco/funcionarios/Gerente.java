@@ -6,8 +6,7 @@ public class Gerente extends Funcionario implements Autenticavel {
 	
 	public Gerente(String nome, String cpf) {
 		super(nome, cpf);	
-	}
-	
+	}	
 	
 	public void setSenha(String senha) {
 		this.senha = senha;

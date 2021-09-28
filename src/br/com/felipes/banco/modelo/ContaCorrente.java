@@ -4,8 +4,7 @@ public class ContaCorrente extends Conta implements Tributavel {
 
 	public ContaCorrente(Data abertura,Cliente titular, String numero, String agencia) {
 		super(abertura, titular, numero, agencia);
-	}
-	
+	}	
 
 	@Override
 	public double getValorDeImposto() {

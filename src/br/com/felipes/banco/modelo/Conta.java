@@ -101,6 +101,11 @@ public abstract class Conta {
 		return abertura;
 	}
 	
+	
+	public String getTipo() {
+		return getClass().getSimpleName();
+	}
+	
 
 
 }
