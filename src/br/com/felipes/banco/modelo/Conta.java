@@ -4,41 +4,41 @@ public abstract class Conta {
 	
 	private static int totalDeContas = 0;
 	private Cliente titular;
+	private Data abertura;
 	private String numero;
 	private String agencia;
 	private double saldo;
 	
-	public Conta(Cliente titular, String numero, String agencia) {
+	public Conta(Data data, Cliente titular, String numero, String agencia) {
+		this.abertura = data;
 		this.titular = titular;
 		this.numero = numero;
 		this.agencia = agencia;
 		totalDeContas += 1;
 	}
 	
-	public boolean saca(double valor) {
-		if (this.saldo >= valor) {
+	public double saca(double valor) {
+		if (valor <= this.saldo) {
 			this.saldo -= valor;
-			return true;
-		} else 
-			return false;
-		
+			return valor;
+		} else {
+			return valor;
+		}
 	}
 	
 	public double calculaRendimento() {
-		return this.saldo*0.1;
+		double rendimento = this.saldo*0.1;
+		return rendimento;
 	}
 	
 	public void deposita(double valor) {
 		this.saldo  += valor;;	
 	}
 	
-	public boolean transferePara(Conta conta, double valor) {
-		boolean retirou = this.saca(valor);
-		if (retirou == true) {
+	public void transferePara(Conta conta, double valor) {
+		if (valor <= this.saldo) {
+			this.saldo -= valor;
 			conta.deposita(valor);
-			return true;
-		} else {
-			return false;
 		}
 	}
 	
@@ -83,10 +83,19 @@ public abstract class Conta {
 
 	public static int getTotalDeContas() {
 		return totalDeContas;
+	}	
+	 
+	 public String recuperaDadosParaImpressao() {
+		 String saldo = Double.toString(getSaldo());
+		 return "agencia: " + getAgencia() + " conta: " + getNumero() + " saldo: " + saldo
+		 + "data: " + getAbertura().recuperaData();
+		 
+	 }
+
+	public Data getAbertura() {
+		return abertura;
 	}
 	
-	
-	
-	
+
 
 }

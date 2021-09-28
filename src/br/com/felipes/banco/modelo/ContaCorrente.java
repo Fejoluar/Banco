@@ -2,8 +2,8 @@ package br.com.felipes.banco.modelo;
 
 public class ContaCorrente extends Conta implements Tributavel {
 
-	public ContaCorrente(Cliente titular, String numero, String agencia) {
-		super(titular, numero, agencia);
+	public ContaCorrente(Data abertura,Cliente titular, String numero, String agencia) {
+		super(abertura, titular, numero, agencia);
 	}
 	
 
