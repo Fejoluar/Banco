@@ -20,13 +20,17 @@ public abstract class Conta {
 	public void saca(double valor) {
 		if(valor < 0) {
 			throw new IllegalArgumentException("Nao pode sacar valor negativo");
-		}
-		if (this.saldo < valor) {
+		}else if (this.saldo < valor) {
 			throw new IllegalArgumentException("Saldo Insuficiente");
-		} else {
+		}else if(valor >= 10000) {
+				throw new IllegalArgumentException("Não pode sacar acima de 10000 reais");
+			}
+		 else {
 			this.saldo -= valor;			
 		}
+		
 	}
+	
 	
 	public double calculaRendimento() {
 		double rendimento = this.saldo*0.1;
@@ -50,42 +54,25 @@ public abstract class Conta {
 	public double calculaDeRendimento() {
 		return this.saldo*0.1;
 	}
-
 	
 
 	public Cliente getTitular() {
 		return titular;
 	}
 
-	public void setTitular(Cliente titular) {
-		this.titular = titular;
-	}
-
 	public String getNumero() {
 		return numero;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
 	}
 
 	public String getAgencia() {
 		return agencia;
 	}
 
-	public void setAgencia(String agencia) {
-		this.agencia = agencia;
-	}
-
 	public double getSaldo() {
 		return saldo;
 	}
 
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
-
-
+	
 	public static int getTotalDeContas() {
 		return totalDeContas;
 	}	

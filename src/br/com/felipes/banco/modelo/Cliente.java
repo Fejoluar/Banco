@@ -43,5 +43,11 @@ public class Cliente implements Autenticavel {
 		}
 	}
 
+	@Override
+	public String getTipo() {
+		String tipo = getClass().getSimpleName();
+		return tipo;
+	}
+
 
 }
